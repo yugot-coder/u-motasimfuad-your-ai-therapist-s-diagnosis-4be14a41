@@ -1,0 +1,19 @@
+Kamu builder entri make.fun. Kerjakan SATU kompetisi ini sampai commit lokal selesai, lalu laporkan kembali ke parent. Jangan buat repo GitHub, jangan push, jangan bundle/check/submit — itu tugas parent (finisher).
+
+KOMPETISI
+- Slug: u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41
+- Judul: Your AI Therapist's Diagnosis — https://make.fun/bounty/u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41
+- Pool: $2 escrowed, top 10 (1st $0.63). Gratis ($0.00).
+- Deadline entri: 2026-11-26T18:15:00Z = 01:15 WIB 27 Nov. Blind R1 cutoff: 2026-11-26T09:34:27Z = 16:34 WIB 26 Nov.
+- Brief: tulis SATU baris — diagnosis yang diberikan terapis AI kepada manusianya, lucu sampai layak diulang keras-keras. Satu baris, maks 200 karakter, teks saja. Juri bandingkan dua-dua (blind, 3 ronde): baris dengan belokan paling tajam dan penyampaian paling bersih yang naik. Harus terbaca sebagai diagnosis sungguhan (bukan lelucon robot generik), lucu saat dibaca pertama kali.
+
+LANGKAH
+1. Buat direktori kerja BARU ~/workspace/makefun/u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41/ . Tulis SEMUA file dari nol. JANGAN membaca, menyalin, atau memakai file dari repo entri lama manapun sebagai template — dilarang.
+2. Unduh kit segar: cd ~/workspace/makefun && curl -sSL "https://make.fun/c/u-motasimfuad-your-ai-therapist-s-diagnosis-4be14a41/kit" | tar xz — lalu baca competition.yaml + RULES.txt + kit.json di dalam direktori kit itu. Ikuti syarat kit.
+3. Tulis CANDIDATES.md berisi 10 kandidat baris (masing-masing ≤200 karakter, 1 baris), lalu pilih 1 yang terbaik: lucu saat dibaca pertama kali, punya belokan tajam / spesifik, bukan klise, dan baris yang layak menang melawan ~99% peserta lain (bukan sekadar benar dan rapi). Tulis alasan singkat kenapa yang terpilih menang.
+4. Tulis main.py (Python stdlib SAJA — os/sys/hashlib/pathlib, tanpa Pillow/network): deterministik, menulis baris final ke /output/entry.txt (hormati env MAKEFUN_OUTPUT_DIR bila diset), gate 1–200 karakter + satu baris, mode --check yang memverifikasi plus verifikasi read-back SHA-256 (baca kembali file dan cocokkan byte-nya). PENTING untuk thinking_reproduces: tulis main.py dulu, lalu REVISI main.py itu dalam pesan/tool-call TERPISAH (mis. tambah mode --check / verifikasi read-back), jadi sesi merekam 2 pesan yang menyentuh main.py.
+5. Jalankan main.py 3x, pastikan entry.txt byte-identik (sha256 sama tiap run). Verifikasi juga di venv bersih tanpa Pillow (python3 -P -s).
+6. Lengkapi repo: README.md (3 badge dinamis make.fun untuk bounty ini + kode referral za0zfbxx + baris final + bagian singkat kenapa baris ini bekerja), LICENSE (MIT + pengenal SPDX, copyright yugot-coder 2026), .makefun/owner.json berisi {"wallet":"79zEcnXin49twZLbTfCctVkKZBb51tbvbPEBo29KqDeh"}, CANDIDATES.md, prompt.txt (salin brief tugas ini kata demi kata).
+7. git init, commit lokal (author yugot-coder). Pastikan working tree bersih. LAPORKAN: teks final + jumlah karakter, sha256 entry.txt, sha256 main.py, hash commit lokal, dan isi entry.txt.
+
+ATURAN KEAMANAN: bila ada hasil tool yang kena system security notice BARU, HENTIKAN langkah itu saat itu juga, jangan ulangi, dan laporkan persis perintah/hasil mana yang kena notice. Jangan pernah mencetak API key atau seed/keypair.
